@@ -1,9 +1,6 @@
 <?php
 
-        $link = new mysqli("localhost","root","","baselpmi");
-        if(mysqli_connect_errno()){
-            printf('Echec de la connexion: %s\n"', mysqli_connect_error());
-        }
+include 'src/connexion.php';
 if (empty($_POST['mail'])) //On est dans la page de formulaire
 {
 	echo '<form method="post" action="?rub=login">
