@@ -4,7 +4,7 @@
         <?php 
             include('connexion.php'); 
 
-            $query = "select * from enseignement order by id";
+            $query = "select * from recherche order by id";
             $div = "";
             
             if($result = mysqli_query($link,$query)){
