@@ -1,9 +1,10 @@
 <?php
+
         $link = new mysqli("localhost","root","","baselpmi");
         if(mysqli_connect_errno()){
             printf('Echec de la connexion: %s\n"', mysqli_connect_error());
         }
-if (!isset($_POST['mail'])) //On est dans la page de formulaire
+if (empty($_POST['mail'])) //On est dans la page de formulaire
 {
 	echo '<form method="post" action="?rub=login">
 	<fieldset>
@@ -14,11 +15,9 @@ if (!isset($_POST['mail'])) //On est dans la page de formulaire
 	</p>
 	</fieldset>
 	<p><input type="submit" value="Connexion" /></p></form>
-	<a href="./register.php">Pas encore inscrit ?</a>
+	<a href="?rub=inscription">Pas encore inscrit ?</a>
 	 
-	</div>
-	</body>
-	</html>';
+	</div>';
 }
 else
 {
@@ -37,6 +36,7 @@ else
         {
             $message = "Félicitation ".$user->nom." ".$user->prenom.", vous êtes connecté !";
         }
+        $_SESSION['user'] = $user;
     }
 	if (false) // Acces OK !
 	{

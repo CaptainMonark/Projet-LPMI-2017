@@ -44,11 +44,23 @@
         </div>
     </div>
     <div class="dropdown">
-        <button class="dropbtn">Connexion</button>
+        <?php
+        if(!isset($_SESSION['user']))
+        {
+        echo '<button class="dropbtn">Connexion</button>
         <div class="dropdown-content">
-            <a href='?rub=login'>S'identifier</a>
-            <a href='?rub=inscription'>S'inscrire</a>
-        </div>
+            <a href="?rub=login">S\'identifier</a>
+            <a href="?rub=inscription">S\'inscrire</a>
+        </div>';
+        }
+        else
+        {
+        echo '<button class="dropbtn">'.$_SESSION['user']->nom.'</button>
+        <div class="dropdown-content">
+            <a href="?rub=login">Deconnexion</a>
+        </div>';
+        }
+        ?>
     </div>
     
 </nav>
