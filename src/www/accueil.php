@@ -26,7 +26,9 @@
     <a class="next" href="#no-js-slider-2">next</a>  
   </li>
   <li id="no-js-slider-2" class="slide">
-    <?php include ("src/chargerEnseignement.php"); ?>
+    <div class="enseignementL">
+        <?php include ("src/chargerEnseignement.php"); ?>
+    </div>
     <a class="prev" href="#no-js-slider-1">prev</a>
     <a class="next" href="#no-js-slider-3">next</a>           
   </li>

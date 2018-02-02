@@ -9,6 +9,7 @@
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/header.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/footer.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/accueil.css" />
+		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/chargerEnseignement.css" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
@@ -17,7 +18,5 @@
 	<?php
 		include ("src/www/corps.php");
 	?>
-	<script src="src/assets/js/jquery-3.3.1.min.js"></script>
-	<script src="src/assets/js/login.js"></script>
 	</body>
 </html>
