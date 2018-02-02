@@ -57,7 +57,7 @@
         {
         echo '<button class="dropbtn">'.$_SESSION['user']->nom.'</button>
         <div class="dropdown-content">
-            <a href="?rub=login">Deconnexion</a>
+            <a href="?rub=deconnexion">Deconnexion</a>
         </div>';
         }
         ?>
