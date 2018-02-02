@@ -31,11 +31,10 @@
       background: #000 url('https://lh4.googleusercontent.com/-JN1IZLtuToI/UUoZnMG3C_I/AAAAAAAAAE8/SEbJ9nqXGnY/s226/sprite.png') no-repeat -167px 25px;
     }
     .slider {
-      height:100%;
+      height:85%;
       width:100%;
       position: relative;
       z-index: 10;
-      overflow: hidden;
     }
     .slide {
       position:absolute;
@@ -61,17 +60,24 @@
     }
     .fondS1{
         position: absolute;
-        background-color: rgba(0, 0, 0, 0.815);
         top:0;
         left:0;
         width:100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.815);
         background: url("../assets/images/mirande.jpg") no-repeat center center fixed;
         background-size: cover;
         box-sizing: border-box;
         filter: blur(4px);
         filter: brightness(50%)
+    }
+    .fondS2{
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height: 100%;
+        background-color: rgb(240, 240, 240);
+        z-index: -1;
     }
     .tPres{
         font-size:24px;

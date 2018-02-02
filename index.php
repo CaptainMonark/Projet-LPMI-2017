@@ -9,7 +9,11 @@
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/header.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/footer.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/accueil.css" />
+<<<<<<< HEAD
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/login.css" />
+=======
+		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/chargerEnseignement.css" />
+>>>>>>> ac733a60da19a057f02e608f68b9adb8e16eacdb
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
@@ -18,7 +22,5 @@
 	<?php
 		include ("src/www/corps.php");
 	?>
-	<script src="src/assets/js/jquery-3.3.1.min.js"></script>
-	<script src="src/assets/js/login.js"></script>
 	</body>
 </html>
