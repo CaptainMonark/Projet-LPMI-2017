@@ -8,6 +8,7 @@
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/style.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/header.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/footer.css" />
+		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/accueil.css" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
