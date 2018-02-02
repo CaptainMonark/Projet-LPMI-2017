@@ -11,6 +11,7 @@
     font-family:simplifica;
 }
 
+
 .content{
     background: white !important;
     height:auto;
@@ -67,14 +68,11 @@
 }
 
 .acces:hover .acces_button{
-    background: #FF8F00;
+    background: #1565C0;
     color:white;
 }
 
-.acces:hover{
-    background: white;
-    color:#FF8F00;
-}
+
 
 .acces_button{
     width:80%;
@@ -82,8 +80,8 @@
     font-size:22px;
     display:block;
     background:white;
-    border: solid 1px #FF8F00;
-    color:#FF8F00;
+    border: solid 1px #1565C0;
+    color:#1565C0;
     transition: background-color .7s, color .7s;
     cursor:pointer;
     line-height:40px;
