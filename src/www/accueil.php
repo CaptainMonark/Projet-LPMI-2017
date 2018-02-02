@@ -9,15 +9,15 @@
     <div class="fondS1"></div>
     <div class="slide1">
         <div class="presentation">
-            <p>Présentation : </p>
-            <p>Sandrine Lanquetin, Docteur en Informatique de l'Université de Bourgogne,</p>
-            <p>Maître de conférences en informatique à l'université de Dijon</p>
+            <p class="tPres">Présentation : </p>
+            <p> <span class="nom"> Sandrine Lanquetin</span>, Docteur en Informatique de l'Université de Bourgogne,</p>
+            <p> Maître de conférences en informatique à l'université de Dijon</p>
             <ul >
                 <li class="listePres">
                     Enseignement à l'UFR des sciences et techniques de Dijon
                 </li>
                 <li class="listePres"> 
-                    Recherche en modélisation géométrique au laboratoire d'Electronique et d'informatique de l'Image (LE2I) à Dijon
+                    Recherche en modélisation géométrique au laboratoire LE2I à Dijon
                 </li>
             </ul>
         </div>
