@@ -3,14 +3,13 @@
     src: url('../assets/font/simplifica.ttf');
 }
 
-.enseignement{
+.listI{
     width:75%;
     margin:auto;
     padding-top:100px;
     padding-bottom:100px;
     font-family:simplifica;
 }
-
 
 .content{
     background: white !important;

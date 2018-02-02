@@ -33,11 +33,10 @@
     <a class="next" href="#no-js-slider-3">next</a>           
   </li>
   <li id="no-js-slider-3" class="slide">
+    <div class="recherche">
+        <?php include ("src/chargerRecherche.php"); ?>
+    </div>
     <a class="prev" href="#no-js-slider-2">prev</a>
-    <a class="next" href="#no-js-slider-4">next</a>           
-  </li>
-  <li id="no-js-slider-4" class="slide">
-    <a class="prev" href="#no-js-slider-3">prev</a>
     <a class="next" href="#no-js-slider-1">next</a>           
   </li>
 </ul>
