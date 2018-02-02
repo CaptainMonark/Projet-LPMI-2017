@@ -1,0 +1,53 @@
+<?php
+        $link = new mysqli("localhost","root","","baselpmi");
+        if(mysqli_connect_errno()){
+            printf('Echec de la connexion: %s\n"', mysqli_connect_error());
+        }
+if (!isset($_POST['mail'])) //On est dans la page de formulaire
+{
+	echo '<form method="post" action="?rub=login">
+	<fieldset>
+	<legend>Connexion</legend>
+	<p>
+    <label class="labelLogin" for="mail">Adresse email :</label><input name="mail" type="text" id="mail" /><br/>
+	<label class="labelLogin" for="password">Mot de Passe :</label><input type="password" name="password" id="password" />
+	</p>
+	</fieldset>
+	<p><input type="submit" value="Connexion" /></p></form>
+	<a href="./register.php">Pas encore inscrit ?</a>
+	 
+	</div>
+	</body>
+	</html>';
+}
+else
+{
+    $message='';
+    if (empty($_POST['mail']) || empty($_POST['password']) ) //Oublie d'un champ
+    {
+        $message = '<p>une erreur s\'est produite pendant votre identification.
+	Vous devez remplir tous les champs</p>
+	<p>Cliquez <a href="?rub=login">ici</a> pour revenir</p>';
+    }
+    else //On check le mot de passe
+    {
+        $result = $link->query("SELECT * FROM utilisateur WHERE mail = '". $_POST['mail']."'");
+        $user = $result->fetch_object();
+        if($_POST['password'] == $user->mdp)
+        {
+            $message = "Félicitation ".$user->nom." ".$user->prenom.", vous êtes connecté !";
+        }
+    }
+	if (false) // Acces OK !
+	{
+
+	}
+	else // Acces pas OK !
+	{
+
+	}
+    
+    echo $message;
+}
+
+?>

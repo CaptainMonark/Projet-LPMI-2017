@@ -43,6 +43,13 @@
             <a href="?rub=publication#2002">2002</a>
         </div>
     </div>
+    <div class="dropdown">
+        <button class="dropbtn">Connexion</button>
+        <div class="dropdown-content">
+            <a href='?rub=login'>S'identifier</a>
+            <a href='?rub=inscription'>S'inscrire</a>
+        </div>
+    </div>
     
 </nav>
 </header> 
