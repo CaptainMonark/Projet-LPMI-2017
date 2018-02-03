@@ -22,7 +22,7 @@
             </ul>
         </div>
     </div>
-    <a class="prev" href="#no-js-slider-4">prev</a>
+    <a class="prev" href="#no-js-slider-3">prev</a>
     <a class="next" href="#no-js-slider-2">next</a>  
   </li>
   <li id="no-js-slider-2" class="slide">
