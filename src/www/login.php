@@ -1,6 +1,12 @@
 <?php
+<<<<<<< HEAD
 
 include 'src/connexion.php';
+=======
+
+include('src/connexion.php');
+
+>>>>>>> 881991bfb8ba2a9f7649232b3fa6bfc6926517a2
 if (empty($_POST['mail'])) //On est dans la page de formulaire
 {
 	echo '<form method="post" action="?rub=login">

@@ -4,30 +4,11 @@
     <div class="dropdown">
     <a href='?rub=accueil#no-js-slider-2'><button class="dropbtn">Accueil</button></a>
     </div>
-    <div class="dropdown">
-        <button class="dropbtn">Enseignement</button>
-        <div class="dropdown-content">
-            <a href='?rub=LPSIL'>Langage pour le web LPSIL</a>
-            <a href="?rub=L3SI">Synthèse d'image L3 info</a>
-            <a href="?rub=L3TW">Technologie du web L3 info</a>
-            <a href="?rub=M1CG">Computer graphics M1CV</a>
-            <a href="?rub=M2MW">Web M2 Multimedia</a>
-            <a href="?rub=M2BDIAW">Web M2 BDIA</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <button class="dropbtn">Recherches</button>
-        <div class="dropdown-content">
-            <a href='?rub=ss'>Surfaces de subdivision</a>
-            <a href="?rub=si">Subdivision inverse</a>
-            <a href="?rub=dfl">Déformations de formes libre</a>
-            <a href="?rub=inter">Intersections</a>
-            <a href="?rub=pm">Précision des maillages</a>
-            <a href="?rub=sa">Subdivision adaptative</a>
-            <a href="?rub=qi">Quasi-Interpolant</a>
-            
-        </div>
-    </div>
+    <?php
+        include('menuE.php');
+        echo $menu1;
+        echo $menu2;
+    ?>
     <div class="dropdown">
         <button class="dropbtn">Publications</button>
         <div class="dropdown-content">
