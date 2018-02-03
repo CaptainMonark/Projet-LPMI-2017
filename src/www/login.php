@@ -1,10 +1,6 @@
 <?php
-<<<<<<< HEAD
-include('src/connexion.php');
-=======
 
 include 'src/connexion.php';
->>>>>>> af2aac3e33ff47d6f8d736ff2c06bf94c11c5288
 if (empty($_POST['mail'])) //On est dans la page de formulaire
 {
 	echo '<form method="post" action="?rub=login">
