@@ -13,8 +13,8 @@ if (empty($_POST['mail'])) //On est dans la page de formulaire
 	<fieldset>
 	<legend>Connexion</legend>
 	<p>
-    <label class="labelLogin" for="mail">Adresse email :</label><input name="mail" type="text" id="mail" /><br/>
-	<label class="labelLogin" for="password">Mot de Passe :</label><input type="password" name="password" id="password" />
+    <label class="labelLogin" for="mail">Adresse email :</label><input name="mail" type="text" required id="mail" /><br/>
+	<label class="labelLogin" for="password">Mot de Passe :</label><input type="password" name="password" required id="password" />
 	</p>
 	</fieldset>
 	<p><input type="submit" value="Connexion" /></p></form>
