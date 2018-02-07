@@ -12,11 +12,10 @@
                     $div = $div."<div class='item' >"
                     ."<figure class='figure'>"
                     ."<img class='image' src='src/assets/images/".$row["alias"].".png' />"
-                    ."<a class='a' href='?rub=detail&id=".$row['id']."'></a>"
                     ."</figure>"
                     ."<p class='title'>".$row["titre"]."</p>"
                     ."<div class='acces'>"
-                    ."<a class='acces_button' href='?rub=".$row["alias"].".php'>Accéder</a>"
+                    ."<a class='acces_button' href='?rub=".$row["alias"]."'>Accéder</a>"
                     ."</div>"
                     ."</div>";
                 }
