@@ -1,8 +1,8 @@
 <?php
 $chemin = 'src/fichier/'.$page;
-lister($chemin);
+lister($chemin,$link,$page);
 $ajout = '';
-function lister($chemin){
+function lister($chemin,$link,$page){
         $nb_fichier = 0;
         $div = "";
         $repertoire = $chemin;
@@ -11,25 +11,31 @@ function lister($chemin){
             {
                 if($fichier !== '.' && $fichier !=='..'){
                     if(is_dir($repertoire."/".$fichier)){
-                        $div = $div."<div><h1>".$fichier."</h1></div>";
+                       // $div = $div."<div><h1>".$fichier."</h1></div>";
                         lister($repertoire."/".$fichier);
                     }else{
-                    $nb_fichier++;
-                    //echo '<li><a href="src/fichier/LPSIL/"'. $fichier . '">' . $fichier . '</a></li>';
-        
-                    $div = $div."<div class='item' >"
-                    ."<figure class='figure'>"
-                    ."<img class='image' src='src/assets/images/LPSIL.png' />"
-                    ."<a class='a' href='src/fichier/LPSIL/'". $fichier . "'></a>"
-                    ."</figure>"
-                    ."<p class='title'>".$fichier."</p>"
-                    ."<div class='acces'>"
-                    ."<a class='acces_button' href='src/fichier/LPSIL/'". $fichier ."'>Accéder</a>"
-                    ."</div>"
-                    ."</div>";
+                        $nb_fichier++;
+                        $query = "select * from fichier where nom_ex = '".$fichier."'";
+                        $div = "";
+                        if($result = mysqli_query($link,$query)){
+                            while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){ 
+                                //echo '<li><a href="src/fichier/LPSIL/"'. $fichier . '">' . $fichier . '</a></li>';
+                                $div = $div."<div class='item' >"
+                                ."<figure class='figure'>"
+                                ."<img class='image' src='src/assets/images/LPSIL.png' />"
+                                ."<a class='a' href='src/fichier/".$page."/'". $fichier . "'></a>"
+                                ."</figure>"
+                                ."<p class='title'>".$row['nom']."</p>"
+                                ."<div class='acces'>"
+                                ."<a class='acces_button' href='src/fichier/".$page."/'". $fichier ."'>Accéder</a>"
+                                ."</div>"
+                                ."</div>";
+                            }mysqli_free_result($result);
+                        }
                     }
                 }
             }
+            
             closedir($dossier); 
         }
         else{
@@ -50,5 +56,5 @@ $ajout = $ajout."<div class='item' >"
 ."</div>";
 
 echo $ajout;
-
+mysqli_close($link);
 ?>

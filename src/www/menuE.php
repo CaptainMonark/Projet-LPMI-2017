@@ -41,5 +41,5 @@
             }
             $menu2= $menu.'</div>';
 
-    mysqli_close($link);
+    
 ?>
