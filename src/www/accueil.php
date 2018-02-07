@@ -43,3 +43,8 @@
 </div>
         
 </div>
+<?php
+    echo "<div id='footer'>";
+        include ("footer.php");
+    echo "</div>";
+?>

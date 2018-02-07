@@ -1,5 +1,15 @@
 <?php
-    $nom = "avatars/{$id_membre}.{$extension_upload}";
-    $resultat = move_uploaded_file($_FILES['icone']['tmp_name'],$nom);
-    if ($resultat) echo "Transfert réussi";
+    if(isset($_FILES['mon_fichier']))
+    { 
+        $dossier = 'fichier/LPSIL/';
+        $fichier = basename($_FILES['mon_fichier']['name']);
+        if(move_uploaded_file($_FILES['mon_fichier']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+        {
+            echo 'Upload effectué avec succès !';
+        }
+        else //Sinon (la fonction renvoie FALSE).
+        {
+            echo 'Echec de l\'upload !';
+        }
+    }
 ?>
