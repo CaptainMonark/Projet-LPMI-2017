@@ -44,16 +44,19 @@ function lister($chemin,$link,$page){
         
         echo $div;
 }
-$ajout = $ajout."<div class='item' >"
-."<figure class='figure'>"
-."<img class='image' src='src/assets/images/ajouter.png' />"
-."<a class='a' href='?rub=formulaireAjout'></a>"
-."</figure>"
-."<p class='title'>Ajouter un fichier </p>"
-."<div class='acces'>"
-."<a class='acces_button' href='?rub=formulaireAjout'>Ajouter</a>"
-."</div>"
-."</div>";
-echo $ajout;
+if($_SESSION["user"]->profil == 0)
+{
+    $ajout = $ajout."<div class='item' >"
+    ."<figure class='figure'>"
+    ."<img class='image' src='src/assets/images/ajouter.png' />"
+    ."<a class='a' href='?rub=formulaireAjout'></a>"
+    ."</figure>"
+    ."<p class='title'>Ajouter un fichier </p>"
+    ."<div class='acces'>"
+    ."<a class='acces_button' href='?rub=formulaireAjout'>Ajouter</a>"
+    ."</div>"
+    ."</div>";
+    echo $ajout;
+}
 mysqli_close($link);
 ?>

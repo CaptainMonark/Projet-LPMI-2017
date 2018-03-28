@@ -1,5 +1,7 @@
-
-<form method="post" action="src/ajouterFichier.php" enctype="multipart/form-data">
+<?php
+if(isset($_SESSION['user']) && $_SESSION["user"]->profil == 0)
+{
+    echo '<form method="post" action="src/ajouterFichier.php" enctype="multipart/form-data">
     <label for="icone">Icône du fichier :</label><br />
     <input type="file" name="icone" id="icone" /><br />
     <label for="mon_fichier">Fichier :</label><br />
@@ -8,5 +10,11 @@
     <label for="titre">Titre du fichier :</label><br />
     <input type="text" name="titre" value="Titre du fichier" id="titre" /><br />
     <input type="submit" name="submit" value="Envoyer" />
-</form>
+    </form>';
+}
+else
+{
+    header ("Location: ?rub=accueil#no-js-slider-1" );	
+}
+?>
 

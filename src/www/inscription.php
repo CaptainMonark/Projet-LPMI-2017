@@ -25,9 +25,7 @@ if (!empty($_POST['mail'])
     && !empty($_POST['confirmpassword']) 
     && ($_POST['password'] == $_POST['confirmpassword']))
     {
-        $query = "INSERT INTO utilisateur (nom, prenom, mail, mdp, profil) VALUES ('".$_POST['prenom']."', '".$_POST['nom']."', '".$_POST['mail']."', '".$_POST['password']."', 0)";
-        echo $query;
-        echo 'something';
+        $query = "INSERT INTO utilisateur (nom, prenom, mail, mdp, profil) VALUES ('".$_POST['prenom']."', '".$_POST['nom']."', '".$_POST['mail']."', '".$_POST['password']."', 1)";
         $link->query($query);
     }
 ?>
