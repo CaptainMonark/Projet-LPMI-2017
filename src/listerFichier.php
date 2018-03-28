@@ -19,15 +19,15 @@ function lister($chemin,$link,$page){
                         $div = "";
                         if($result = mysqli_query($link,$query)){
                             while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){ 
-                                //echo '<li><a href="src/fichier/LPSIL/"'. $fichier . '">' . $fichier . '</a></li>';
+                                echo "<li><a onclick= openfile('".$repertoire."','".$fichier."') >".$fichier."</a></li>";
                                 $div = $div."<div class='item' >"
                                 ."<figure class='figure'>"
                                 ."<img class='image' src='src/assets/images/LPSIL.png' />"
-                                ."<a class='a' href='src/fichier/".$page."/'". $fichier . "'></a>"
+                                ."<a class='a' onclick= openfile('".$repertoire."','".$fichier."')></a>"
                                 ."</figure>"
                                 ."<p class='title'>".$row['nom']."</p>"
                                 ."<div class='acces'>"
-                                ."<a class='acces_button' href='src/fichier/".$page."/'". $fichier ."'>Accéder</a>"
+                                ."<a class='acces_button' onclick= openfile('".$repertoire."','".$fichier."') >Accéder</a>"
                                 ."</div>"
                                 ."</div>";
                             }mysqli_free_result($result);
