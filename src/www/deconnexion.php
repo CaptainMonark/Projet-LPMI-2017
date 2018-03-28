@@ -1,4 +1,4 @@
 <?php
     session_destroy();
-    include 'login.php';
+    header ("Location: ?rub=accueil#no-js-slider-1" );
 ?>

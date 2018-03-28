@@ -1,7 +1,7 @@
 <?php
-include('src/connexion.php');
-$result = $link->query("SELECT * FROM utilisateur WHERE mail = 'f.l@gmail.com'");
-$mail = $result->fetch_object();
+//include('src/connexion.php');
+//$result = $link->query("SELECT * FROM utilisateur WHERE mail = 'f.l@gmail.com'");
+//$mail = $result->fetch_object();
 //echo $mail->nom;
 ?>
 <form method="post" action="?rub=inscription">
@@ -15,7 +15,8 @@ $mail = $result->fetch_object();
     <label class="labelLogin" for="password">Mot de Passe :</label><input type="password" name="password" id="password" />
     <br />
     <label class="labelLogin" for="confirmpassword">Confirmez le mot de Passe :</label><input type="password" name="confirmpassword" id="confirmpassword" />
-    <input type="submit" value="S'inscrire" /></form>
+    <input type="submit" value="S'inscrire" />
+</form>
 <?php
 if (!empty($_POST['mail']) 
     && !empty($_POST['password']) 
@@ -24,8 +25,9 @@ if (!empty($_POST['mail'])
     && !empty($_POST['confirmpassword']) 
     && ($_POST['password'] == $_POST['confirmpassword']))
     {
-        $link->query("INSERT INTO utilisateur (nom, prenom, mail, mdp) VALUES ('".$_POST['prenom']."', '".$_POST['nom']."', '".$_POST['mail']."', '".$_POST['password']."')");
+        $query = "INSERT INTO utilisateur (nom, prenom, mail, mdp, profil) VALUES ('".$_POST['prenom']."', '".$_POST['nom']."', '".$_POST['mail']."', '".$_POST['password']."', 0)";
+        echo $query;
+        echo 'something';
+        $link->query($query);
     }
-    
-
 ?>

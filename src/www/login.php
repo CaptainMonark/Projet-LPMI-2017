@@ -1,50 +1,33 @@
 <?php
 
 include ('src/connexion.php');
-if (empty($_POST['mail'])) //On est dans la page de formulaire
+
+$message='';
+if(isset($_POST['mail']))
 {
-	echo '<form method="post" action="?rub=login">
-	<fieldset>
-	<legend>Connexion</legend>
-	<p>
-    <label class="labelLogin" for="mail">Adresse email :</label><input name="mail" type="text" required id="mail" /><br/>
-	<label class="labelLogin" for="password">Mot de Passe :</label><input type="password" name="password" required id="password" />
-	</p>
-	</fieldset>
-	<p><input type="submit" value="Connexion" /></p></form>
-	<a href="?rub=inscription">Pas encore inscrit ?</a>
-	 
-	</div>';
-}
-else
-{
-    $message='';
-    if (empty($_POST['mail']) || empty($_POST['password']) ) //Oublie d'un champ
-    {
-        $message = '<p>une erreur s\'est produite pendant votre identification.
-	Vous devez remplir tous les champs</p>
-	<p>Cliquez <a href="?rub=login">ici</a> pour revenir</p>';
-    }
-    else //On check le mot de passe
-    {
-        $result = $link->query("SELECT * FROM utilisateur WHERE mail = '". $_POST['mail']."'");
-        $user = $result->fetch_object();
-        if($_POST['password'] == $user->mdp)
-        {
-            $message = "Félicitation ".$user->nom." ".$user->prenom.", vous êtes connecté !";
-        }
-        $_SESSION['user'] = $user;
-    }
-	if (false) // Acces OK !
-	{
-
+	$result = $link->query("SELECT * FROM utilisateur WHERE mail = '". $_POST['mail']."'");		
+	$user = $result->fetch_object();
+	if(isset($user) && $_POST['password'] == $user->mdp)
+	{	 
+		$message = "Félicitation ".$user->nom." ".$user->prenom.", vous êtes connecté !";
+		$_SESSION['user'] = $user;
+		header ("Location: ?rub=accueil#no-js-slider-1" );	
 	}
-	else // Acces pas OK !
+	else
 	{
-
-	}
-    
-    echo $message;
-}
-
+		$message = '<p>Identifiants inconnus</p>';
+	}  
+}	       
+echo $message;
+echo '<form method="post" action="?rub=login">
+<fieldset>
+<legend>Connexion</legend>
+<p>
+<label class="labelLogin" for="mail">Adresse email :</label><input name="mail" type="text" required id="mail" /><br/>
+<label class="labelLogin" for="password">Mot de Passe :</label><input type="password" name="password" required id="password" />
+</p>
+</fieldset>
+<p><input type="submit" value="Connexion" /></p></form>
+<a href="?rub=inscription">Pas encore inscrit ?</a>
+</div>';
 ?>
