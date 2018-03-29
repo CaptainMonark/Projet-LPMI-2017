@@ -8,6 +8,7 @@
         include('menuE.php');
         echo $menu1;
         echo $menu2;
+        
     ?>
     <div class="dropdown">
         <button class="dropbtn">Publications</button>

@@ -3,29 +3,28 @@
 //$result = $link->query("SELECT * FROM utilisateur WHERE mail = 'f.l@gmail.com'");
 //$mail = $result->fetch_object();
 //echo $mail->nom;
+
+if(isset($_SESSION['etat'])){
+    echo $_SESSION['etat'];
+    unset($_SESSION['etat']);
+}
 ?>
-<form method="post" action="?rub=inscription">
-    <label class="labelLogin" for="prenom">Prénom :</label><input type="text" name="prenom" id="prenom" />
-    <br />
-    <label class="labelLogin" for="nom">Nom :</label><input type="nom" name="nom" id="nom" />
-    <br />
-    <label class="labelLogin" for="mail">Adresse email :</label><input name="mail" type="text" id="mail" />
-    <p>Vous utiliserez cette adresse email pour vous connecter par la suite.</p>
-    <br />
-    <label class="labelLogin" for="password">Mot de Passe :</label><input type="password" name="password" id="password" />
-    <br />
-    <label class="labelLogin" for="confirmpassword">Confirmez le mot de Passe :</label><input type="password" name="confirmpassword" id="confirmpassword" />
-    <input type="submit" value="S'inscrire" />
-</form>
-<?php
-if (!empty($_POST['mail']) 
-    && !empty($_POST['password']) 
-    && !empty($_POST['prenom']) 
-    && !empty($_POST['nom']) 
-    && !empty($_POST['confirmpassword']) 
-    && ($_POST['password'] == $_POST['confirmpassword']))
-    {
-        $query = "INSERT INTO utilisateur (nom, prenom, mail, mdp, profil) VALUES ('".$_POST['prenom']."', '".$_POST['nom']."', '".$_POST['mail']."', '".$_POST['password']."', 1)";
-        $link->query($query);
-    }
-?>
+
+
+<div class="login">
+<div class="login-page">
+    <div class="form">
+        <form class="register-form" method="post" action="src/ajouterUtilisateur.php">
+            <input type="text" name="prenom" id="prenom" placeholder="Prénom" required/>
+            <input type="text" name="nom" id="nom" placeholder="Nom" required/>
+            <input type="text" placeholder="Adresse e-mail" name="addrmail" id="addrmail" required/>
+            <input type="password" placeholder="Mot de passe" name="password" id="password" required/>
+            <input type="password" placeholder="Comfirmez votre mot de passe" name="confirmpassword" id="confirmpassword" required/>
+            <input type="submit" class="button" value="S'inscrire" />
+            <p class="message">Déja inscrit ? <a href="?rub=login" >S'enregistrer</a></p>
+        </form>
+    </div>
+</div>
+</div>
+
+

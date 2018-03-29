@@ -2,6 +2,7 @@
 </div>
 
 <div class="accueil">
+<?php if($_GET['msg'] == 1) { echo "Connexion réussie"; } ?>
 <!-- Slideshow container -->
 <div class="slider">
 <ul>
