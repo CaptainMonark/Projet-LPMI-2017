@@ -4,16 +4,18 @@
 //$mail = $result->fetch_object();
 //echo $mail->nom;
 
-if(isset($_SESSION['etat'])){
-    echo $_SESSION['etat'];
-    unset($_SESSION['etat']);
-}
 ?>
 
 
 <div class="login">
 <div class="login-page">
     <div class="form">
+    <?php
+    if(isset($_SESSION['etat'])){
+        echo " ".$_SESSION['etat'];
+        unset($_SESSION['etat']);
+    }
+    ?>
         <form class="register-form" method="post" action="src/ajouterUtilisateur.php">
             <input type="text" name="prenom" id="prenom" placeholder="Prénom" required/>
             <input type="text" name="nom" id="nom" placeholder="Nom" required/>

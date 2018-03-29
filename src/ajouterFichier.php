@@ -1,8 +1,10 @@
 <?php
     include('connexion.php');
+    session_start();
     if(isset($_FILES['mon_fichier']) && isset($_POST['titre']))
     { 
-        $dossier = 'fichier/LPSIL/';
+        $path = strtoupper($_GET['page']);
+        $dossier = 'fichier/'.$path.'/';
         $fichier = basename($_FILES['mon_fichier']['name']);
         
         $div = "";
@@ -11,14 +13,15 @@
         {
             $query = "INSERT INTO fichier (nom,nom_ex) values ('".$_POST["titre"]."','".$fichier."')";
             echo $query;
-            mysqli_query($link,$query)  OR die (header('Location: ../?rub=LPSIL'));
-            echo 'Upload effectué avec succès !';
+            mysqli_query($link,$query) OR die (header('Location: ../?rub='.$path));
+            $_SESSION['succes'] = true;
+           header('Location: ../?rub='.$path);
         }
         else //Sinon (la fonction renvoie FALSE).
         {
-            header('Location: ../?rub=LPSIL');
-            echo 'Echec de l\'upload !';
+            header('Location: ../?rub='.$path);
+            $_SESSION['succes'] = false;
         }
     }
-    mysqli_close($link);
+
 ?>

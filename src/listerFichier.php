@@ -1,6 +1,7 @@
 <?php
 $chemin = 'src/fichier/'.$page;
 lister($chemin,$link,$page);
+$_SESSION['dossier'] = $page;
 $ajout = '';
 function lister($chemin,$link,$page){
         $nb_fichier = 0;
@@ -15,19 +16,21 @@ function lister($chemin,$link,$page){
                         lister($repertoire."/".$fichier);
                     }else{
                         $nb_fichier++;
+                        echo $fichier;
                         $query = "select * from fichier where nom_ex = '".$fichier."'";
                         $div = "";
                         if($result = mysqli_query($link,$query)){
-                            while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){ 
-                                echo "<li><a onclick= openfile('".$repertoire."','".$fichier."') >".$fichier."</a></li>";
+                            while($row = mysqli_fetch_row($result)){ 
+                                echo $nb_fichier;
+                                //echo '<li><a href="src/fichier/LPSIL/"'. $fichier . '">' . $fichier . '</a></li>';
                                 $div = $div."<div class='item' >"
                                 ."<figure class='figure'>"
                                 ."<img class='image' src='src/assets/images/LPSIL.png' />"
-                                ."<a class='a' onclick= openfile('".$repertoire."','".$fichier."')></a>"
+                                ."<a class='a' href='src/fichier/".$page."/'". $fichier . "'></a>"
                                 ."</figure>"
-                                ."<p class='title'>".$row['nom']."</p>"
+                                ."<p class='title'>".$row['1']."</p>"
                                 ."<div class='acces'>"
-                                ."<a class='acces_button' onclick= openfile('".$repertoire."','".$fichier."') >Accéder</a>"
+                                ."<a class='acces_button' href='src/fichier/".$page."/'". $fichier ."'>Accéder</a>"
                                 ."</div>"
                                 ."</div>";
                             }mysqli_free_result($result);
@@ -35,8 +38,8 @@ function lister($chemin,$link,$page){
                     }
                 }
             }
-            
             closedir($dossier); 
+            
         }
         else{
             echo 'Le dossier n\' a pas pu être ouvert';
@@ -53,7 +56,7 @@ if($_SESSION["user"]->profil == 0)
     ."</figure>"
     ."<p class='title'>Ajouter un fichier </p>"
     ."<div class='acces'>"
-    ."<a class='acces_button' href='?rub=formulaireAjout'>Ajouter</a>"
+    ."<a class='acces_button' href='?rub=formulaireAjout&amp;page=".$page."'>Ajouter</a>"
     ."</div>"
     ."</div>";
     echo $ajout;
