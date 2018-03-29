@@ -1,5 +1,4 @@
 <?php
-echo $_GET['enseignement'];
 $chemin = 'src/fichier/'.$_GET['enseignement'];
 lister($chemin,$link,$_GET['enseignement']);
 $_SESSION['dossier'] = $_GET['enseignement'];

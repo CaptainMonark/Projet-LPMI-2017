@@ -13,13 +13,13 @@
         {
             $query = "INSERT INTO fichier (nom,nom_ex) values ('".$_POST["titre"]."','".$fichier."')";
             echo $query;
-            mysqli_query($link,$query) OR die (header('Location: ../?rub='.$path));
+            mysqli_query($link,$query) OR die (header('Location: ../?rub=enseignement&amp;enseignement='.strtoupper($path)));
             $_SESSION['succes'] = true;
-           header('Location: ../?rub='.$path);
+           header('Location: ../?rub=enseignement&enseignement='.$path);
         }
         else //Sinon (la fonction renvoie FALSE).
         {
-            header('Location: ../?rub='.$path);
+            header('Location: ../?rub=enseignement&enseignement='.$path);
             $_SESSION['succes'] = false;
         }
     }
