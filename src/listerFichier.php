@@ -46,6 +46,7 @@ function lister($chemin,$link,$page){
         
         
 }
+
 if($_SESSION["user"]->profil == 0)
 {
     $ajout = $ajout."<div class='item' >"

@@ -1,6 +1,6 @@
-<header>
+<header class="sote-container">
 <span class="name"><span id="blanc">Langage Web</span><span id="bleu"> LPSIL</span></span>
-<nav>
+<nav class="site-pusher">
     <div class="dropdown">
     <a href='?rub=accueil#no-js-slider-2'><button class="dropbtn">Accueil</button></a>
     </div>
