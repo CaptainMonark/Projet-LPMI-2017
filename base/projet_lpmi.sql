@@ -124,7 +124,7 @@ INSERT INTO `recherche` (`id`, `titre`, `alias`) VALUES
 
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `mail` varchar(50) DEFAULT NULL,
   `mdp` varchar(25) DEFAULT NULL,
   `nom` varchar(20) DEFAULT NULL,
