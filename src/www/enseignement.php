@@ -9,5 +9,13 @@ if(isset($_SESSION['succes'])){
         unset($_SESSION['succes']);
     }
 }
+if(isset($_SESSION['user']))
+{
     include('src/listerFichier.php');
+}
+else
+{
+    $_SESSION["noAccess"] = true;
+    include("login.php");
+}
 ?>
