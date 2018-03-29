@@ -1,7 +1,8 @@
 <?php
-$chemin = 'src/fichier/'.$page;
-lister($chemin,$link,$page);
-$_SESSION['dossier'] = $page;
+echo $_GET['enseignement'];
+$chemin = 'src/fichier/'.$_GET['enseignement'];
+lister($chemin,$link,$_GET['enseignement']);
+$_SESSION['dossier'] = $_GET['enseignement'];
 $ajout = '';
 function lister($chemin,$link,$page){
         $nb_fichier = 0;
@@ -55,7 +56,7 @@ if($_SESSION["user"]->profil == 0)
     ."</figure>"
     ."<p class='title'>Ajouter un fichier </p>"
     ."<div class='acces'>"
-    ."<a class='acces_button' href='?rub=formulaireAjout&amp;page=".$page."'>Ajouter</a>"
+    ."<a class='acces_button' href='?rub=formulaireAjout&amp;page=".$_GET['enseignement']."'>Ajouter</a>"
     ."</div>"
     ."</div>";
     echo $ajout;

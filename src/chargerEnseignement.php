@@ -23,7 +23,7 @@
                     ."</figure>"
                     ."<p class='title'>".$row["titre"]."</p>"
                     ."<div class='acces'>"
-                    ."<a class='acces_button' href='?rub=".$alias."'>Accéder</a>"
+                    ."<a class='acces_button' href='?rub=enseignement&amp;enseignement=".strtoupper($row["alias"])."'>Accéder</a>"
                     ."</div>"
                     ."</div>";
                 }
