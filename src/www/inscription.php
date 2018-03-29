@@ -19,9 +19,9 @@ if(isset($_SESSION['etat'])){
             <input type="text" name="nom" id="nom" placeholder="Nom" required/>
             <input type="text" placeholder="Adresse e-mail" name="addrmail" id="addrmail" required/>
             <input type="password" placeholder="Mot de passe" name="password" id="password" required/>
-            <input type="password" placeholder="Comfirmez votre mot de passe" name="confirmpassword" id="confirmpassword" required/>
+            <input type="password" placeholder="Confirmez votre mot de passe" name="confirmpassword" id="confirmpassword" required/>
             <input type="submit" class="button" value="S'inscrire" />
-            <p class="message">Déja inscrit ? <a href="?rub=login" >S'enregistrer</a></p>
+            <p class="message">Déja inscrit ? <a href="?rub=login" >Se connecter</a></p>
         </form>
     </div>
 </div>

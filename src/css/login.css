@@ -96,3 +96,9 @@
 .container .info span .fa {
   color: #EF3B3A;
 }
+.messageAuth {
+  text-align: center;
+  text-transform: uppercase;
+  color: #ED0000;
+  font-weight: bold;
+}
