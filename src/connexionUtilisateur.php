@@ -10,7 +10,8 @@ if(isset($_POST['addrmail']))
 	{	 
 		$message = "Félicitation ".$user->nom." ".$user->prenom.", vous êtes connecté !";
 		$_SESSION['user'] = $user;
-		header ("Location: ../?rub=accueil#no-js-slider-1?msg=1" );	
+		$_SESSION['message'] = $message;
+		header ("Location: ../?rub=accueil#no-js-slider-1" );	
 	}
 	else
 	{

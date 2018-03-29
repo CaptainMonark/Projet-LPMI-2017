@@ -2,7 +2,11 @@
 </div>
 
 <div class="accueil">
-<?php if($_GET['msg'] == 1) { echo "Connexion réussie"; } ?>
+<?php 
+    if(isset($_SESSION['message'])){
+        echo $_SESSION['message'];
+        unset($_SESSION['message']);
+    }?>
 <!-- Slideshow container -->
 <div class="slider">
 <ul>
