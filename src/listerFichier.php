@@ -23,7 +23,7 @@ function lister($chemin,$link,$page){
                                 //echo '<li><a href="src/fichier/LPSIL/"'. $fichier . '">' . $fichier . '</a></li>';
                                 $div = $div."<div class='item' >"
                                 ."<figure class='figure'>"
-                                ."<img class='image' src='src/assets/images/LPSIL.png' />"
+                                ."<img class='image' src='src/assets/images/".$page.".png' />"
                                 ."<a class='a' onclick= openfile('".$repertoire."','".$fichier."')></a>"
                                 ."</figure>"
                                 ."<p class='title'>".$row['1']."</p>"
