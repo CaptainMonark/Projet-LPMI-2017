@@ -16,12 +16,10 @@ function lister($chemin,$link,$page){
                         lister($repertoire."/".$fichier);
                     }else{
                         $nb_fichier++;
-                        echo $fichier;
                         $query = "select * from fichier where nom_ex = '".$fichier."'";
                         $div = "";
                         if($result = mysqli_query($link,$query)){
                             while($row = mysqli_fetch_row($result)){ 
-                                echo $nb_fichier;
                                 //echo '<li><a href="src/fichier/LPSIL/"'. $fichier . '">' . $fichier . '</a></li>';
                                 $div = $div."<div class='item' >"
                                 ."<figure class='figure'>"
@@ -33,6 +31,7 @@ function lister($chemin,$link,$page){
                                 ."<a class='acces_button' href='src/fichier/".$page."/'". $fichier ."'>Accéder</a>"
                                 ."</div>"
                                 ."</div>";
+                                echo $div;
                             }mysqli_free_result($result);
                         }
                     }
@@ -45,7 +44,7 @@ function lister($chemin,$link,$page){
             echo 'Le dossier n\' a pas pu être ouvert';
         }
         
-        echo $div;
+        
 }
 if($_SESSION["user"]->profil == 0)
 {
