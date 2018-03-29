@@ -11,11 +11,14 @@ if(isset($_POST['addrmail']))
 		$message = "Félicitation ".$user->nom." ".$user->prenom.", vous êtes connecté !";
 		$_SESSION['user'] = $user;
 		$_SESSION['message'] = $message;
+		$_SESSION["wrongId"] = false;
 		header ("Location: ../?rub=accueil#no-js-slider-1" );	
 	}
 	else
 	{
 		$message = '<p>Identifiants inconnus</p>';
+		$_SESSION["wrongId"] = true;
+		header ("Location: ../?rub=login" );
     }  
     echo $message;
 }	       

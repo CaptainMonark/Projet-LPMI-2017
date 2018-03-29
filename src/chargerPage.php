@@ -34,7 +34,7 @@ else
 	}
 	else
 	{
-		echo "Vous devez être connecté pour accéder à cette page";
+		$_SESSION["noAccess"] = true;
 		$page = "login";
 	}	
 	
