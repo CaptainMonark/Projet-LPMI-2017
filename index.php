@@ -12,9 +12,11 @@
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/login.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/chargerEnseignement.css" />
 		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/chargerFichier.css" />
+		<link rel="stylesheet" media="screen" type="text/css" title="design" href="src/css/recherche.css" />
 		<script src="src/js/openfile.js"></script> 
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 
 	<body>
