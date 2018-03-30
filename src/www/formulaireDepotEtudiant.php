@@ -1,6 +1,6 @@
 <?php
 include('src/connexion.php');
-if(isset($_SESSION['user']) && $_SESSION["user"]->profil == 0 && isset($_GET['page']) && isset($_GET['projet']))
+if(isset($_SESSION['user']) && isset($_GET['page']) && isset($_GET['projet']))
 {
     
     echo '<div class="login">
