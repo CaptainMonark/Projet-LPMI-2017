@@ -4,9 +4,10 @@ if(isset($_SESSION['user']))
 {
 	if (isset($_GET["rub"])) {
 		$page=$_GET["rub"];
+	}else{
+		header("?rub=accueil#no-js-slider-2");
 	}
-}
-else 
+}else 
 {
 	$query = "select * from enseignement";	
 	if($result = mysqli_query($link,$query))
