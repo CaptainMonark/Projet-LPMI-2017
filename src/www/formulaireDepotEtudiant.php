@@ -17,13 +17,22 @@ if(isset($_SESSION['user']) && isset($_GET['page']) && isset($_GET['projet']))
                 <input type="file" name="mon_fichier" id="mon_fichier" /><br />
                 <input type="text" name="titre" value="Titre du fichier" id="titre" /><br />
                 <input type="submit" class="button" name="submit" value="Envoyer" />
-                <p class="message">Voir la liste des étudiants inscrits ? <a href="?rub=regarderInscription&amp;projet='.$_GET['projet'].'" >Voir</a></p>
+                <p class="message">Voir la liste des étudiants inscrits ? <a href="?rub=regarderInscription&amp;page='.$_GET['page'].'&amp;projet='.$_GET['projet'].'" >Voir</a></p>
                 </form>
                 </div>
                 </div>
                 </div>';
+                
+                
+            }else{
+                echo 'Vous ne pouvez pas accédez a ce projet';
             }
         }
+        $nbrow = mysqli_num_rows($result);
+        if($nbrow == 0){
+            echo'Vous ne pouvez plus accédez a ce projet';
+        }
+        
         
     }
 
