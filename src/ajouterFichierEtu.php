@@ -23,7 +23,7 @@
             echo $query;
             mysqli_query($link,$query) OR die ( header('fail'));
             $_SESSION['succes'] = true;
-           header('Location: ../?rub=formulaireDepotEtudiant&page='.$path.'&projet='.$path2);
+           header('Location: ../?rub=regarderInscription&page='.$path.'&projet='.$path2);
         }
         else //Sinon (la fonction renvoie FALSE).
         {

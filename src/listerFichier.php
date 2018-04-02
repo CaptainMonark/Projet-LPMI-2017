@@ -1,8 +1,36 @@
 <?php
+$qProjet = "select * from dossierouvert where date >= CURDATE() AND enseignement = '".$_GET['enseignement']."'";
+
+if($projets = mysqli_query($link,$qProjet)){
+    echo "<h2>Projets en cours</h2>";
+    while($rowP = mysqli_fetch_assoc($projets)){
+        $date = $rowP['date'];
+        list($year, $month, $day) = explode('-', $date);
+        if($_SESSION["user"]->profil == 1) 
+        {
+            echo "<a class='acces_button' href='?rub=formulaireDepotEtudiant&page=".$_GET['enseignement'].
+            "&projet=".$rowP['nom']."'>".$rowP['nom']." - Date Limite : ".$day." / ".$month." / ".$year."</a>";
+        }
+        else
+        {
+            echo "<a class='acces_button' href='?rub=regarderInscription&page=".$_GET['enseignement'].
+            "&projet=".$rowP['nom']."'>".$rowP['nom']." - Date Limite : ".$day." / ".$month." / ".$year."</a>";
+        }
+    }
+}
+if($_SESSION["user"]->profil == 0)
+{
+    echo "<a class='acces_button' href='?rub=formulaireAjoutProjet&amp;page=".$_GET['enseignement']."'>Ajouter un projet</a>";
+}
+// ?rub=formulaireDepotEtudiant&page=LPSIL&projet=projet1
+// ?rub=regarderInscription&page=LPSIL&projet=TestProjet3
 $chemin = 'src/fichier/'.$_GET['enseignement'];
 lister($chemin,$link,$_GET['enseignement']);
 $_SESSION['dossier'] = $_GET['enseignement'];
 $ajout = '';
+
+
+
 function lister($chemin,$link,$page){
         $nb_fichier = 0;
         $div = "";

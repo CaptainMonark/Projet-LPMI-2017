@@ -15,7 +15,7 @@ if(isset($_SESSION['user']) && isset($_GET['page']) && isset($_GET['projet']))
                 <input type="text" value="'.$_GET['page'].'" name="dossier" disabled><br/>
                 <input type="text" value="'.$_GET['projet'].'" name="projet" disabled><br/>
                 <input type="file" name="mon_fichier" id="mon_fichier" /><br />
-                <input type="text" name="titre" value="Titre du fichier" id="titre" /><br />
+                <input type="text" name="titre" placeholder="Titre du fichier" id="titre" /><br />
                 <input type="submit" class="button" name="submit" value="Envoyer" />
                 <p class="message">Voir la liste des étudiants inscrits ? <a href="?rub=regarderInscription&amp;page='.$_GET['page'].'&amp;projet='.$_GET['projet'].'" >Voir</a></p>
                 </form>

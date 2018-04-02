@@ -16,7 +16,7 @@ $tableau = "";
         $tableau = $tableau.'</table>';
         mysqli_free_result($result);
         echo $tableau;
-        echo '<p class="message">Retourner a la page  précédente? <a href="?rub=formulaireDepotEtudiant&amp;page='.$_GET['page'].'&amp;projet='.$_GET['projet'].'" >Voir</a></p>';
+        //echo '<p class="message">Retourner a la page  précédente? <a href="?rub=formulaireDepotEtudiant&amp;page='.$_GET['page'].'&amp;projet='.$_GET['projet'].'" >Voir</a></p>';
 }
 
 ?>
