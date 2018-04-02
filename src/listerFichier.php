@@ -2,7 +2,7 @@
 $qProjet = "select * from dossierouvert where date >= CURDATE() AND enseignement = '".$_GET['enseignement']."'";
 
 if($projets = mysqli_query($link,$qProjet)){
-    echo "<h2>Projets en cours</h2>";
+    echo "<h1>Projets</h1>";
     while($rowP = mysqli_fetch_assoc($projets)){
         $date = $rowP['date'];
         list($year, $month, $day) = explode('-', $date);
